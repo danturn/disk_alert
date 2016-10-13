@@ -17,6 +17,7 @@ check_disk() {
 
   if [ $alerts_to_send == true ]
   then 
+    echo "Sending alert email to $ADMIN_EMAIL"
     echo -e "$text" |
     mail -s "Low Disk alert for \"$(hostname)\"" $ADMIN_EMAIL
   fi
