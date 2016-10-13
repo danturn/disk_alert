@@ -1,3 +1,4 @@
+#!/bin/bash
 USAGE_THRESHOLD=90
 
 check_disk() {
