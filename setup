@@ -24,5 +24,8 @@ dc_mailname_in_oh='true'
 dc_localdelivery='mail_spool'" | sudo tee /etc/exim4/update-exim4.conf.conf > /dev/null
 
 echo "smtp.sendgrid.net:$username:$password" | sudo tee /etc/exim4/passwd.client > /dev/null
+
+sudo service exim4 restart
+
 cat disk_alert | sed "s/ADMIN_EMAIL=\".*\"$/ADMIN_EMAIL=\"$admin_email\"/" | sudo tee /etc/cron.daily/disk_alert > /dev/null
 sudo chmod +x /etc/cron.daily/disk_alert
